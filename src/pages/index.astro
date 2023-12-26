@@ -1,0 +1,14 @@
+---
+import ButtonSubmit from '../components/ButtonSubmit.svelte';
+import Textarea from '../components/Textarea.svelte';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Fix my english">
+	<main class="p-5 max-w-xl mx-auto">
+		<h1 class="text-white font-bold text-3xl mb-5">Fix my english</h1>
+		<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
+		<Textarea client:visible />
+		<ButtonSubmit client:visible />
+	</main>
+</Layout>
