@@ -1,14 +1,31 @@
 ---
 import ButtonSubmit from '../components/ButtonSubmit.svelte';
+import ResultSubmit from '../components/ResultSubmit.astro';
+import ResultTranslate from '../components/ResultTranslate.astro';
+import ButtonTranslate from '../components/ButtonTranslate.svelte';
 import Textarea from '../components/Textarea.svelte';
+import TextareaTranslator from '../components/TextareaTranslator.svelte';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Fix my english">
-	<main class="p-5 max-w-xl mx-auto">
-		<h1 class="text-white font-bold text-3xl mb-5">Fix my english</h1>
-		<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
-		<Textarea client:visible />
-		<ButtonSubmit client:visible />
+	<main class="p-5 w-full justify-between items-center max-w-[1120px] mx-auto flex">
+		<div>
+			<h1 class="text-white font-bold text-3xl mb-5">Fix my english</h1>
+			<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
+			<Textarea client:visible />
+			<ButtonSubmit client:visible />
+			<ResultSubmit />
+		</div>
+		<h3 class="text-white font-semibold">
+			Fix or Translate
+		</h3>
+		<div>
+			<h1 class="text-white font-bold text-3xl mb-5">Translate my english</h1>
+			<label for="messageTranslator" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
+			<TextareaTranslator client:visible />
+			<ButtonTranslate client:visible />
+			<ResultTranslate />
+		</div>
 	</main>
 </Layout>
